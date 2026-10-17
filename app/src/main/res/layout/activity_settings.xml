@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollSettingsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/layoutSettingsRoot"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="2dp">
+
+            <TextView
+                android:id="@+id/tvSettingsTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Settings"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Initial Setup -->
+        <TextView
+            android:id="@+id/tvInitialSetupLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Initial setup"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvInitialSetupSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use these if Root or the Accessibility Service isn’t enabled yet."
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginBottom="6dp" />
+
+        <Button
+            android:id="@+id/btnTestRootAccess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test / Grant Root Access"
+            android:layout_marginBottom="6dp" />
+
+        <Button
+            android:id="@+id/btnAccessibilitySetup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Accessibility service setup"
+            android:layout_marginBottom="8dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"
+            android:background="?android:attr/listDivider" />
+
+        <!-- Mouse / Edge Scroll -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mouse / Edge Scroll"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Both Mouse modes share the edge settings below. Output is selected as a mode. -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vertical Edge Sensitivity"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/seekVerticalEdgeSensitivity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="9"
+                android:progress="4"
+                android:contentDescription="Vertical Edge Sensitivity" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvVerticalEdgeSensitivityCurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current: 5"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Horizontal Edge Sensitivity"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/seekHorizontalEdgeSensitivity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="9"
+                android:progress="4"
+                android:contentDescription="Horizontal Edge Sensitivity" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvHorizontalEdgeSensitivityCurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current: 5"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkEdgeSensitivityLinked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Link Sensitivity"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gesture Scroll Distance"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/seekEdgeDistance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="9"
+                android:progress="4"
+                android:contentDescription="Gesture Scroll Distance" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvEdgeDistanceCurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current: 5"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Smooth Wheel Distance"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/seekSmoothWheelDistance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="9"
+                android:progress="4"
+                android:contentDescription="Smooth Wheel Distance" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSmoothWheelDistanceCurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current: 5"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bottom Touch Guard Height"
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+            android:id="@+id/spinnerBottomTouchGuard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Bottom Touch Guard height"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Mode Switching -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mode Switching"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Quick Toggle settings -->
+        <TextView
+            android:id="@+id/tvQuickToggleLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quick toggle"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvQuickToggleModesLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quick Toggle cycles only through the selected modes (Smooth Wheel → Gesture → Keyboard). Select one mode to stay on it."
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/layoutQuickToggleModesRow"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <CheckBox
+                android:id="@+id/checkQuickToggleMouseSmooth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mouse (Smooth Wheel)"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/checkQuickToggleMouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mouse (Gesture)"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/checkQuickToggleKeyboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keyboard"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <CheckBox
+            android:id="@+id/checkToastQuick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quick Toggle Notification"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Auto Keyboard Switching"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp" />
+
+        <CheckBox
+            android:id="@+id/checkAutoKeyboardText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Automatically switch to keyboard mode when a text field is focused"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="?android:attr/listDivider" />
+
+        <!-- General / Advanced -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="General / Advanced"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Theme -->
+        <TextView
+            android:id="@+id/tvThemeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="App theme"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/spinnerTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Excluded apps section -->
+        <TextView
+            android:id="@+id/tvExcludedLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Excluded apps (ignored for mode switching)"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <EditText
+                android:id="@+id/editSearchExcluded"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Search exclusions..."
+                android:singleLine="true" />
+
+            <ImageButton
+                android:id="@+id/btnResetExcluded"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Reset exclusions to default"
+                android:src="@android:drawable/ic_menu_revert" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddExcludedApps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add apps to exclusion list"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Fixed-height list; screen scrolls -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerExcludedApps"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/tvBackupLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Backup &amp; restore"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp" />
+
+        <LinearLayout
+            android:id="@+id/layoutBackupRow"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnBackupSettings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Backup settings" />
+
+            <Button
+                android:id="@+id/btnRestoreSettings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Restore settings" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvViewOnGitHub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View on GitHub"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingTop="2dp"
+            android:paddingBottom="6dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Version"
+                android:textSize="12sp"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/tvSettingsVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="v1.0"
+                android:textSize="12sp"
+                android:textColor="?android:attr/textColorSecondary" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

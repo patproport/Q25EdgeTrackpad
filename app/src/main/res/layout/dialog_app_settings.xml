@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvAppSettingsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="App settings"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- QUICK TOGGLE (PER-APP) -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quick toggle (for this app)"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <CheckBox
+            android:id="@+id/checkAppQuickToggleUseGlobal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use global Quick Toggle settings"
+            android:textSize="12sp"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quick Toggle cycles only through the selected modes."
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginBottom="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp">
+
+            <CheckBox
+                android:id="@+id/checkAppQuickToggleMouseSmooth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mouse (Smooth Wheel)"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/checkAppQuickToggleMouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mouse (Gesture)"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/checkAppQuickToggleKeyboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keyboard"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginBottom="10dp" />
+
+        <!-- AUTO KEYBOARD (PER-APP) -->
+
+        <CheckBox
+            android:id="@+id/checkAppAutoKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Auto keyboard on text input for this app"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</ScrollView>

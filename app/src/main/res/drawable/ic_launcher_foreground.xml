@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Original Q25EdgeTrackpad launcher artwork.
+  Built from simple geometric paths for this project; no third-party icon asset is used.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Trackpad / toggle body. -->
+    <path
+        android:fillColor="#FF38BDF8"
+        android:pathData="M27,54 L77,54 A13,13 0,0 1,90 67 A13,13 0,0 1,77 80 L27,80 A13,13 0,0 1,14 67 A13,13 0,0 1,27 54 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M39,67 A9,9 0,1 1,21 67 A9,9 0,1 1,39 67 Z" />
+
+    <!-- Independently drawn eight-tooth gear. -->
+    <path
+        android:fillColor="#FFF8FAFC"
+        android:pathData="M72,21 L80,21 L81.5,27 L86,24.5 L91.5,30 L88.5,34 L94,35.5 L94,43.5 L88.5,45 L91.5,49 L86,54.5 L81.5,52 L80,58 L72,58 L70.5,52 L66,54.5 L60.5,49 L63.5,45 L58,43.5 L58,35.5 L63.5,34 L60.5,30 L66,24.5 L70.5,27 Z" />
+    <path
+        android:fillColor="#FF172554"
+        android:pathData="M82,39.5 A6,6 0,1 1,70 39.5 A6,6 0,1 1,82 39.5 Z" />
+</vector>
