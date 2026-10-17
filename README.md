@@ -32,6 +32,19 @@ The app also provides per-app mode selection, automatic keyboard switching while
 
 The signed 1.0.0 APK (`versionCode` 1) uses package ID `io.github.patproport.q25edgetrackpad`. The prior test build uses `tech.shroyer.q25trackpadcustomizer.edgescroll`, so Android treats the release as a separate app. To move settings, export the test build's JSON to a location outside the app, then disable its Accessibility service before installing the signed release. Grant KernelSU and Accessibility access only to the new app, then restore the JSON there. The release accepts backups from the prior package in code, but this migration has not been tested on Q25. Remove the test build only after confirming the release and restored settings work.
 
+## Development of the added code
+
+Development proceeded in stages from the local Original source, using Codex. These six implementation files do not exist at the same paths in Original; the table records their purpose, not proof of exclusive authorship. Review of the available source and development records found no evidence of third-party APK, firmware, or repository code copied into them, but cannot establish that no such copying occurred.
+
+| Added file | Purpose |
+|---|---|
+| `BottomTouchGuardController.kt` | Manages a temporary bottom-screen touch guard during trackpad activity. |
+| `EdgeScrollContract.java` | Shares monitor tags, control-file name, and root entry point. |
+| `EdgeScrollController.kt` | Starts and supervises the root monitor and receives edge-scroll requests. |
+| `EdgeScrollDiagnostics.kt` | Aggregates local timing and guard diagnostics. |
+| `EdgeScrollMonitorMain.java` | Monitors input as root and detects edge and corner scroll activity. |
+| `RootProcessRunner.kt` | Runs `su` commands with bounded waits and child-process cleanup. |
+
 ## Build a debug APK on Windows
 
 Install Android Studio or the Android SDK command-line tools, Android SDK Platforms 34 and 36, Android SDK build tools, and Java 17 or newer. The app compiles against SDK 34; its compile-only hidden API stub module also needs the SDK 36 `android.jar`. Set `JAVA_HOME` if Java is not on `PATH`; set `ANDROID_SDK_ROOT` to your SDK location. From the project directory, run:

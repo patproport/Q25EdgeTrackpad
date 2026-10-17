@@ -22,7 +22,16 @@ An earlier release candidate's generated `app/build/outputs/sdk-dependencies/rel
 | [Google Guava](https://github.com/google/guava/blob/master/pom.xml) | `com.google.guava:listenablefuture:1.0` | Apache-2.0 (inherited POM) |
 | [Google Error Prone](https://github.com/google/error-prone/blob/master/COPYING) | `com.google.errorprone:error_prone_annotations:2.15.0` | Apache-2.0 |
 
-`hidden-api-stubs` is a local compile-only module and not a separate runtime library. The Gradle wrapper and compiler are build tools, not APK libraries.
+`hidden-api-stubs` is a local compile-only module and not a separate runtime library. Its four minimal declarations use API names and signatures referenced from these Android Open Source Project (AOSP) framework files:
+
+| Local declaration | AOSP reference | AOSP copyright |
+|---|---|---|
+| `InputManagerGlobal.java` | [android.hardware.input.InputManagerGlobal](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/java/android/hardware/input/InputManagerGlobal.java) | Copyright (C) 2023 The Android Open Source Project |
+| `InputChannel.java` | [android.view.InputChannel](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/java/android/view/InputChannel.java) | Copyright (C) 2010 The Android Open Source Project |
+| `InputEventReceiver.java` | [android.view.InputEventReceiver](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/java/android/view/InputEventReceiver.java) | Copyright (C) 2011 The Android Open Source Project |
+| `InputMonitor.java` | [android.view.InputMonitor](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/java/android/view/InputMonitor.java) | Copyright (C) 2019 The Android Open Source Project |
+
+These references are licensed under [Apache License 2.0](licenses/Apache-2.0.txt). The local declarations omit AOSP implementation bodies and are used only for compilation; Android supplies the framework classes at runtime. The Gradle wrapper and compiler are build tools, not APK libraries.
 
 ## Settings vector
 
